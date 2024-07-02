@@ -9,14 +9,26 @@ public class compras_union {
     Scanner union = new Scanner(System.in);
     String[] menus = {"PRODUCTOS", "PUNTOS DE VENTA", "DELIVERY", "ELIJO SER SALUDABLE"};
     String[] productos = {"PANES", "BOLLERIA", "CEREALES", "BEBIDAS", "GALLETAS", "SNACK", "UNTABLES", "PANETONES"};
-    String[] panes = {"Pan Americano Sandwich -----> S/ 7.80", "Pan  Blanco Superbom Familiar ----->  S/6.40", "Pan Fibra Integral ----->  S/8.90", "Pan multisemillas miel de abeja -----> S/9.30", "Fan Integral Familiar Superbom -----> S/6.50 ", "Pan Granos y Semillas -----> S/8.90", "Pan Fuente -----> S/8.90", "Pan Integral Sándwich Clásico -----> S/9.30"};
-    String [] bolleria={"Pan pita integral granos andinos ----->  S/ 7.60","Pan pita semillas chia y linaza ----->  S/ 7.60","Pre Pizza Union ----->  S/ 8.90","Rollo de Canela ----->  S/ 11.10","Pionono x 7----->  S/19.00"};
-    String [] cereales={"Cereal Premium x 350 g ----->  S/ 21.50","Germen de Trigo ----->  S/ 9.99","Granola  con Granos Andinos ----->  S/ 14.50","Granola con Pasas y Almendras ----->  S/15.20 ","Granola Lonchera x 400 gr ----->  S/13.30","Salvado de Trigo ----->  S/5.99"};
-    String [] bebidas={"Bebida con pulpa de durazno 475 ml ----->  5.50","Bebida con pulpa de mango 475 ml ----->  5.50","Bebida con pulpa de manzana 475 ml ----->  5.50","Bebida con pulpa de piña 475 ml ----->  5.50","Duo Pack D Vine ----->  73.50","Zumo de  Uva 295 mll ----->  7.20"};
-    String [] galletas={"Galleta Lonchera de Coco x 42 gr ----->  S/ 2.50","Galleta Lonchera de Kiwicha x 42 gr ----->  S/ 2.50","Galleta Lonchera de Naranja x 42 gr ----->  S/ 2.50"," Mega Galleta  de Kiwicha ----->   S/5.10"," Mega Galleta de Naranja ----->   S/5.10","Mega Galleta Integral de Coco ----->   S/5.10"};
-    String [] snack={"Palitos con ajonjoli y linaza 65 g ----->  S/ 2.30","Palitos con Especias x 65 gr ----->  S/ 2.30","Tostada Blanca X 10 ----->  S/ 5.30","Tostada Integral X 10 ----->  S/ 5.30"};
-    String [] untables={"Mant. de Mani 1 Kg ----->  S/ 36.00","Mermelada de Uva Frasco ----->  S/ 8.40","Mantequilla de Mani Sachet 200 gr ----->  S/ 10.50","Mant. de Mani Frasco 410 gr ----->  S/ 19.90"};
-    String [] panetones={"Paneton Diet T/L 500 gr ----->  S/ 24.40","Paneton Integral T/B 900 ----->  S/ 23.00 ","Paneton Integral T/C 900 gr ----->  S/ 24.00","Paneton Union T/L 1kg ----->  S/ 32.40","Paneton Vita Rey con Arádanos T/C 900 gr ----->  S/ 26.00"};
+    // array de los productos
+    String[] panes = {"Pan Americano Sandwich", "Pan  Blanco Superbom Familiar", "Pan Fibra Integral", "Pan multisemillas miel de abeja", "Fan Integral Familiar Superbom", "Pan Granos y Semillas", "Pan Fuente", "Pan Integral Sándwich Clásico"};
+    String [] bolleria={"Pan pita integral granos andinos","Pan pita semillas chia y linaza","Pre Pizza Union","Rollo de Canela","Pionono x 7"};
+    String [] cereales={"Cereal Premium x 350 g","Germen de Trigo","Granola  con Granos Andinos","Granola con Pasas y Almendras","Granola Lonchera x 400 gr","Salvado de Trigo"};
+    String [] bebidas={"Bebida con pulpa de durazno 475 ml","Bebida con pulpa de mango 475 ml","Bebida con pulpa de manzana 475 ml","Bebida con pulpa de piña 475 ml","Duo Pack D Vine","Zumo de  Uva 295 mll"};
+    String [] galletas={"Galleta Lonchera de Coco x 42 gr","Galleta Lonchera de Kiwicha x 42 gr","Galleta Lonchera de Naranja x 42 gr"," Mega Galleta  de Kiwicha"," Mega Galleta de Naranja","Mega Galleta Integral de Coco"};
+    String [] snack={"Palitos con ajonjoli y linaza","Palitos con Especias x 65 gr","Tostada Blanca X 10","Tostada Integral X 10"};
+    String [] untables={"Mant. de Mani 1 Kg","Mermelada de Uva Frasco","Mantequilla de Mani Sachet 200 gr","Mant. de Mani Frasco 410 gr"};
+    String [] panetones={"Paneton Diet T/L 500 gr","Paneton Integral T/B 900","Paneton Integral T/C 900 gr","Paneton Union T/L 1kg","Paneton Vita Rey con Arádanos T/C 900 gr"};
+    // array de la descripcion de de los productos
+    String [] descricionPanes = {"Energético y delicioso pan, elaborado en base de harina fortificada con hierro y vitaminas del complejo B. Libre de bromato. Fundamental para el desarrollo y fortalecimiento de los músculos, ideal para complementar tus desayunos. Consumido en las cantidades adecuadas no altera el peso ideal.", "Delicioso pan, elaborado en base de harina fortificada con hierro y vitaminas del complejo B. Libre de bromato, bajo en grasa saturada y colesterol. El pan es un alimento fuente de hidratos de carbono complejos, principal fuente de energía del organismo. Consumido en las cantidades adecuadas no altera el peso ideal.", "Delicioso y saludable pan, Libre de bromato y colesterol. Elaborado en base de harina integral fortificada y granos como la Quinua y la Cañihua. Así mismo, contiene una semilla altamente nutritiva y saludable como el ajonjolí. Pan fortificado con alto en Hierro, contiene fuente de fibra y fuente de proteínas del organismo.", "Delicioso y saludable pan con miel de abeja. Libre de bromato y colesterol. Elaborado en base de harina integral fortificada con hierro y vitaminas del complejo B. Así mismo, contiene semillas altamente nutritivas por su valor funcional para el organismo humano como el Chía, girasol y ajonjolí . Pan fortificado con alto en Hierro, contiene fuente de fibra y fuente de proteínas del organismo.", "Delicioso pan, elaborado en base de harina integral fortificada con hierro y vitaminas del complejo B. Libre de bromato, bajo en grasa saturada y colesterol. El pan es un alimento fuente de hidratos de carbono complejos, principal fuente de energía del organismo. Consumido en las cantidades adecuadas no altera el peso ideal.", "Pan delicioso y saludable, elaborado a base de harina fortificada con hierro y vitaminas del complejo B. Así mismo, contiene semillas altamente nutritivas por su valor funcional para el organismo humano como el girasol, ajonjolí y linaza. Pan fortificado con alto en Hierro, contiene fuente de fibra y fuente de proteínas del organismo.", "Energético y delicioso pan, elaborado en base de harina fortificada con hierro y vitaminas del complejo B. Libre de bromato, bajo en grasa saturada y colesterol. El pan es un alimento fuente de hidratos de carbono complejos, principal fuente de energía del organismo. Consumido en las cantidades adecuadas no altera el peso ideal.", "Delicioso pan, elaborado en base de harina integral fortificada con hierro y vitaminas del complejo B. Libre de colesterol. El pan integral es un alimento fuente de hidratos de carbono complejos, principal fuente de energía del organismo. Consumido en las cantidades adecuadas no altera el peso ideal."};
+    String [] descricionBolleria = {"Delicioso pan pita integral elaborado con semillas de linaza, kiwicha y quinua. Bajo en Colesterol.Contiene Omega 9 y Omega 3.", "Delicioso pan pita elaborado con semillas de chía, linaza y quinua. Libre de grasas trans y colesterol.Contiene Omega 9 y Omega 3.", "Delicioso pan relleno de una mezcla de maní y canela molida. Elaborado en base a harina fortificada con hierro y vitaminas del complejo B. Libre de bromato. Este producto es un alimento fuente de hidratos de carbono complejos, principal fuente de energía del organismo. Consumido en las cantidades adecuadas no altera el peso ideal.", "NO TIENE"};
+    String [] descricionCereales = {"NO TIENE", "El Germen de trigo es rico en fibra insoluble ideal para el control de la glucosa en sangre, reducción del colesterol y protección del corazón. Así también para promover el movimiento intestinal, protección del cáncer de colon y control del peso ideal.", "Energético y delicioso preparado, elaborado a base de una mezcla de frutos secos, semillas y cereales altamente nutritivos. Contiene ajonjolí, linaza, maní, almendras, quinua y kañihua. Fortificada con Zinc y Magnesio.", "Energético y delicioso preparado, elaborado a base de una mezcla de cereales y frutos secos nutritivos. Contiene hojuelas de avena, ajonjolí, pasas y almendras. Fortificada con Zinc y Magnesio. Fuente de Fibra.", "Energético y delicioso preparado, elaborado a base de una mezcla de cereales y semillas nutritivas. Contiene hojuelas de avena, maní, ajonjolí y miel de abeja. Fortificada con Zinc y Magnesio. Fuente de Fibra y de proteínas.", "El Salvado de trigo es rico en fibra insoluble ideal para el control de la glucosa en sangre, reducción del colesterol y protección del corazón. Así también para promover el movimiento intestinal, protección del cáncer de colon y control del peso ideal."};
+    String [] descricionBebidas = {"Bebida refrescante e hidratante, elaborada con seleccionada y deliciosa pulpa de Durazno de 475 ml. Así mismo, esta bebida contiene ingredientes saludables los cuales nos brindan vitaminas, minerales y fibra prebiótica.", "Bebida refrescante e hidratante, elaborada con seleccionada y deliciosa pulpa de Mango de 475 ml. Así mismo, esta bebida contiene ingredientes saludables los cuales nos brindan vitaminas, minerales y fibra prebiótica.", "Bebida refrescante e hidratante, elaborada con seleccionada y deliciosa pulpa de Manzana de 475 ml. Así mismo, esta bebida contiene ingredientes saludables los cuales nos brindan vitaminas, minerales y fibra prebiótica.", "Bebida refrescante e hidratante, elaborada con seleccionada y deliciosa pulpa de piña de 475 ml. Así mismo, esta bebida contiene ingredientes saludables los cuales nos brindan vitaminas, minerales y fibra prebiótica.", "La uva borgoña posee propiedades nutricionales valiosas por su contenido de fitoquímicos o fitoprotectores, como lo son los antioxidantes. En este caso nos brinda polifenoles, ideales para prevenir el cáncer y fortalecer el sistema inmunológico.", "Delicioso zumo, concentrado de uva borgoña. Contiene antioxidantes que contribuye con el fortalecimiento del sistema inmunológico. Libre de azúcar agregada, así también de colorantes y saborizantes artificiales."};
+    String [] descricionGalletas = {"Energética y deliciosa galleta, elaborada en base a la mezcla de harina especial fortificada con hierro y vitaminas del complejo B y coco rallado Libre de colorantes artificiales", "Energética y deliciosa galleta, elaborada en base a la mezcla de harina integral de Kiwicha especial fortificada con hierro. Libre de colorantes artificiales", "Deliciosa galleta sabor a Naranja, elaborada con harina especial fortificada con hierro y vitaminas del complejo B. Deliciosa al paladar por su textura y sabor tradicional.Libre de colorantes artificiales", "Energética y deliciosa galleta, elaborada en base a la mezcla de harina integral especial fortificada con hierro y vitaminas del complejo B y coco rallado. Libre de colorantes artificiales"};
+    String [] descricionSnack = {"Estos deliciosos palitos, están elaborados en base a harina fortificada con hierro. Libre de bromato y colesterol. Este producto es un alimento fuente de hidratos de carbono complejos, principal fuente de energía del organismo. Contiene Omega 9, 6 y 3.", "Estos deliciosos palitos con ajonjolí, chía, kión y ajo, están elaborados en base a harina fortificada con hierro y vitaminas B12. Libre de bromato y colesterol. Este producto es un alimento fuente de hidratos de carbono complejos, principal fuente de energía del organismo. Contiene Omega 9, 6 y 3.", "Deliciosas y clásicas tostadas, elaboradas en base a harina fortificada con hierro y vitaminas del complejo B. Libre de bromato, bajo en grasa saturada y libre de colesterol. Las tostadas son fuente de hidratos de carbono complejos, principal fuente de energía del organismo. Consumido en las cantidades adecuadas no altera el peso ideal.", "Deliciosas y clásicas tostadas, elaboradas en base a harina integral fortificada con hierro y vitaminas del complejo B. Libre de bromato, bajo en grasa saturada y libre de colesterol. Las tostadas son fuente de hidratos de carbono complejos, principal fuente de energía del organismo. Consumido en las cantidades adecuadas no altera el peso ideal."};
+    String [] descricionUntables = {"Elaborado en base a puro maní, fruto seco rico en proteínas. Dos cucharas de este producto aportan el 10% del requerimiento diario de este nutriente. Contiene Omega 6 y 9.", "Fuente de antioxidantes, mermelada clásica. Fuente de energía. Elaborado con uva borgoña.", "Elaborado en base a puro maní, fruto seco rico en proteínas. Dos cucharas de este producto aportan el 10% del requerimiento diario de este nutriente. Contiene Omega 6 y 9.", "Elaborado en base a puro maní, fruto seco rico en proteínas. Dos cucharas de este producto aportan el 10% del requerimiento diario de este nutriente. Contiene Omega 6 y 9."};
+    String [] descricionPanetones = {"Deliciosa y nutritiva receta elaborada a partir de la selección de los mejores ingredientes, como harina integral fortificada con nutrientes a la cual se adiciona higos deshidratados y pecanas. Atractivo al paladar por su miga suave y crujientes, frescas pecanas. Contiene Omega 9. Fuente de proteínas, libre de colorantes artificiales.", "Deliciosa y nutritiva receta elaborada a partir de la selección de los mejores ingredientes, como harina integral fortificada con nutrientes a la cual se adiciona pasas y castañas. Atractivo al paladar por su miga suave y crujientes frescas castañas. Fortificado con Hierro, contiene fuente de fibra y fuente de proteínas. Contiene Omega 6 y 9.", "Deliciosa y nutritiva receta elaborada a partir de la selección de los mejores ingredientes, como harina integral fortificada con nutrientes a la cual se adiciona pasas y castañas. Atractivo al paladar por su miga suave y crujientes frescas castañas. Fortificado con Hierro, contiene fuente de fibra y fuente de proteínas. Contiene Omega 6 y 9.", "\n" +
+            "Receta tradicional elaborada a partir de la selección de los mejores ingredientes, como harina fortificada con nutrientes a la cual se adiciona pasas, frutas confitadas y almendras. Atractivo al paladar por su característica miga suave y fresca.", "Deliciosa y nutritiva receta elaborada a partir de la selección de los mejores ingredientes, como harina integral fortificada con nutrientes a la cual se adiciona arándanos deshidratados y castañas. Atractivo al paladar por su miga suave y crujientes, frescas Castañas."};
+    // array de los precios de los productos
     double[] precioPanes = {7.80,6.40,8.90,9.30,6.50,8.90,8.90,9.30};
     double[] precioBolleria = {7.60,7.60,8.90,11.10,19.00};
     double[] precioCereales = {21.50,9.99,14.50,15.20,13.30,5.99};
@@ -134,13 +146,17 @@ public class compras_union {
         }
         return null;
     }
-    public String fpregunta(){ //CODIGO DE JUANA
-        System.out.println("---------Bienvenido a Productos Union -----------");
-        System.out.println("Marque alguna de las siguientes opciones");
-        System.out.println("Seleccione productos a comprar");
+    // CODIGO DE JUANA
+    public String fpregunta(){ // Muestra las opciones de la pagina union
+        System.out.println("\033[96m");
+        System.out.println("------------ Bienvenido a Productos Union -----------");
+        System.out.println("Selecione alguna de las siguientes opciones");
+
         for (int i = 0; i < menus.length; i++) {
             System.out.println("Opcion " + (i + 1) + " : " + menus[i]);
         }
+
+
         opcion = union.nextInt();
         union.nextLine();
         switch (opcion) {
@@ -155,6 +171,7 @@ public class compras_union {
                 break;
             case 4:
                 this.IMC();
+
             default:
                 System.out.println("Opcion no válida");
                 this.fpregunta();
@@ -162,7 +179,9 @@ public class compras_union {
         }
         return null;
     }
+
     public String fproductos() {
+        System.out.println("\033[96m");
         System.out.println("------ PRODUCTOS------------");
         System.out.println("Seleccione productos a comprar");
         for (int i = 0; i < productos.length; i++) {
@@ -202,23 +221,35 @@ public class compras_union {
         }
         return null;
     }
-
     public void fpanes() {
         System.out.println("------ PANES------------");
         System.out.println("Seleccione panes a comprar");
+        // Imprimir encabezado de la tabla
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.println("=".repeat(60)); // Línea divisoria
+        // Imprimir las filas de la tabla
         for (int i = 0; i < panes.length; i++) {
-            System.out.println("Opcion " + (i + 1) + " : " + panes[i]);
+            System.out.printf("%-10s %-40s %-10s\n", "Opción " + (i + 1), panes[i], "S/. " + precioPanes[i]);
         }
         opcion = union.nextInt();
         union.nextLine();
         if (opcion > 0 && opcion <= panes.length) {
+            System.out.println("Usted va caomprar"+""+panes[opcion - 1]+"su precio es "+"S/."+precioPanes[opcion - 1]);
+            System.out.println("-------------------------DESCRIPCION------------------------");
+            String descripcion = descricionPanes[opcion - 1];
+            String[] lineas = descripcion.split("(?<=\\G.{60})"); // Dividir en líneas de 40 caracteres
+
+            // Imprimir cada línea de la descripción
+            for (String linea : lineas) {
+                System.out.println(linea);
+            }
             System.out.println("¿Cuantos comprará? Ingrese la cantidad");
             cantidad = union.nextInt();
             union.nextLine();
             carrito[opcion - 1] += cantidad;
             subtotal_extra[opcion - 1] = carrito[opcion - 1] * precioPanes[opcion - 1];
             System.out.println("Ud ha pedido " + carrito[opcion - 1] + " de " + panes[opcion - 1]);
-            System.out.println("¿Desea elegir otro producto?  1 SI/ 2 NO / 3 Menu Principal");
+            System.out.println("¿Desea elegir otro producto?  1 SI / 2 NO / 3 Menu Principal");
             opcion = union.nextInt();
             union.nextLine();
             if (opcion == 1) {
@@ -228,29 +259,43 @@ public class compras_union {
             } else if (opcion == 3) {
                 this.fpregunta();
             } else {
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
+                this.fpanes();
             }
         } else {
-            System.out.println("Opcion no válida");
+            System.out.println("Opción no válida");
             this.fpanes();
         }
     }
     public void fbolleria() {
         System.out.println("------ BOLLERIA------------");
         System.out.println("Seleccione panes a comprar");
+        // Imprimir encabezado de la tabla
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.println("=".repeat(60)); // Línea divisoria
+        // Imprimir las filas de la tabla
         for (int i = 0; i < bolleria.length; i++) {
-            System.out.println("Opcion " + (i + 1) + " : " + bolleria[i]);
+            System.out.printf("%-10s %-40s %-10s\n", "Opción " + (i + 1), bolleria[i], "S/. " + precioBolleria[i]);
         }
         opcion = union.nextInt();
         union.nextLine();
         if (opcion > 0 && opcion <= bolleria.length) {
+            System.out.println("Usted va caomprar"+""+bolleria[opcion - 1]+"su precio es "+"S/."+precioBolleria[opcion - 1]);
+            System.out.println("-------------------------DESCRIPCION------------------------");
+            String descripcion = descricionBolleria[opcion - 1];
+            String[] lineas = descripcion.split("(?<=\\G.{60})"); // Dividir en líneas de 40 caracteres
+
+            // Imprimir cada línea de la descripción
+            for (String linea : lineas) {
+                System.out.println(linea);
+            }
             System.out.println("¿Cuantos comprará? Ingrese la cantidad");
             cantidad = union.nextInt();
             union.nextLine();
             carrito[opcion - 1] += cantidad;
             subtotal_extra[opcion - 1] = carrito[opcion - 1] * precioBolleria[opcion - 1];
             System.out.println("Ud ha pedido " + carrito[opcion - 1] + " de " + bolleria[opcion - 1]);
-            System.out.println("¿Desea elegir otro producto?  1 SI/ 2 NO / 3 Menu Principal");
+            System.out.println("¿Desea elegir otro producto?  1 SI / 2 NO / 3 Menu Principal");
             opcion = union.nextInt();
             union.nextLine();
             if (opcion == 1) {
@@ -260,29 +305,43 @@ public class compras_union {
             } else if (opcion == 3) {
                 this.fpregunta();
             } else {
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
+                this.fbolleria();
             }
         } else {
-            System.out.println("Opcion no válida");
-            this.fpanes();
+            System.out.println("Opción no válida");
+            this.fbolleria();
         }
     }
     public void fcereales() {
         System.out.println("------ CEREALES------------");
         System.out.println("Seleccione panes a comprar");
+        // Imprimir encabezado de la tabla
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.println("=".repeat(60)); // Línea divisoria
+        // Imprimir las filas de la tabla
         for (int i = 0; i < cereales.length; i++) {
-            System.out.println("Opcion " + (i + 1) + " : " + cereales[i]);
+            System.out.printf("%-10s %-40s %-10s\n", "Opción " + (i + 1), cereales[i], "S/. " + precioCereales[i]);
         }
         opcion = union.nextInt();
         union.nextLine();
         if (opcion > 0 && opcion <= cereales.length) {
+            System.out.println("Usted va caomprar"+""+cereales[opcion - 1]+"su precio es "+"S/."+precioCereales[opcion - 1]);
+            System.out.println("-------------------------DESCRIPCION------------------------");
+            String descripcion = descricionCereales[opcion - 1];
+            String[] lineas = descripcion.split("(?<=\\G.{60})"); // Dividir en líneas de 40 caracteres
+
+            // Imprimir cada línea de la descripción
+            for (String linea : lineas) {
+                System.out.println(linea);
+            }
             System.out.println("¿Cuantos comprará? Ingrese la cantidad");
             cantidad = union.nextInt();
             union.nextLine();
             carrito[opcion - 1] += cantidad;
             subtotal_extra[opcion - 1] = carrito[opcion - 1] * precioCereales[opcion - 1];
             System.out.println("Ud ha pedido " + carrito[opcion - 1] + " de " + cereales[opcion - 1]);
-            System.out.println("¿Desea elegir otro producto?  1 SI/ 2 NO / 3 Menu Principal");
+            System.out.println("¿Desea elegir otro producto?  1 SI / 2 NO / 3 Menu Principal");
             opcion = union.nextInt();
             union.nextLine();
             if (opcion == 1) {
@@ -292,29 +351,43 @@ public class compras_union {
             } else if (opcion == 3) {
                 this.fpregunta();
             } else {
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
+                this.fcereales();
             }
         } else {
-            System.out.println("Opcion no válida");
-            this.fpanes();
+            System.out.println("Opción no válida");
+            this.fcereales();
         }
     }
     public void fbebidas() {
         System.out.println("------ BEBIDAS------------");
         System.out.println("Seleccione panes a comprar");
+        // Imprimir encabezado de la tabla
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.println("=".repeat(60)); // Línea divisoria
+        // Imprimir las filas de la tabla
         for (int i = 0; i < bebidas.length; i++) {
-            System.out.println("Opcion " + (i + 1) + " : " + bebidas[i]);
+            System.out.printf("%-10s %-40s %-10s\n", "Opción " + (i + 1), bebidas[i], "S/. " + precioBebidas[i]);
         }
         opcion = union.nextInt();
         union.nextLine();
         if (opcion > 0 && opcion <= bebidas.length) {
+            System.out.println("Usted va caomprar"+""+bebidas[opcion - 1]+"su precio es "+"S/."+precioBebidas[opcion - 1]);
+            System.out.println("-------------------------DESCRIPCION------------------------");
+            String descripcion = descricionBebidas[opcion - 1];
+            String[] lineas = descripcion.split("(?<=\\G.{60})"); // Dividir en líneas de 40 caracteres
+
+            // Imprimir cada línea de la descripción
+            for (String linea : lineas) {
+                System.out.println(linea);
+            }
             System.out.println("¿Cuantos comprará? Ingrese la cantidad");
             cantidad = union.nextInt();
             union.nextLine();
             carrito[opcion - 1] += cantidad;
             subtotal_extra[opcion - 1] = carrito[opcion - 1] * precioBebidas[opcion - 1];
             System.out.println("Ud ha pedido " + carrito[opcion - 1] + " de " + bebidas[opcion - 1]);
-            System.out.println("¿Desea elegir otro producto?  1 SI/ 2 NO / 3 Menu Principal");
+            System.out.println("¿Desea elegir otro producto?  1 SI / 2 NO / 3 Menu Principal");
             opcion = union.nextInt();
             union.nextLine();
             if (opcion == 1) {
@@ -324,29 +397,43 @@ public class compras_union {
             } else if (opcion == 3) {
                 this.fpregunta();
             } else {
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
+                this.fbebidas();
             }
         } else {
-            System.out.println("Opcion no válida");
-            this.fpanes();
+            System.out.println("Opción no válida");
+            this.fbebidas();
         }
     }
     public void fgalletas() {
         System.out.println("------ GALLETAS------------");
         System.out.println("Seleccione panes a comprar");
+        // Imprimir encabezado de la tabla
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.println("=".repeat(60)); // Línea divisoria
+        // Imprimir las filas de la tabla
         for (int i = 0; i < galletas.length; i++) {
-            System.out.println("Opcion " + (i + 1) + " : " + galletas[i]);
+            System.out.printf("%-10s %-40s %-10s\n", "Opción " + (i + 1), galletas[i], "S/. " + precioGalletas[i]);
         }
         opcion = union.nextInt();
         union.nextLine();
         if (opcion > 0 && opcion <= galletas.length) {
+            System.out.println("Usted va caomprar"+""+galletas[opcion - 1]+"su precio es "+"S/."+precioGalletas[opcion - 1]);
+            System.out.println("-------------------------DESCRIPCION------------------------");
+            String descripcion = descricionGalletas[opcion - 1];
+            String[] lineas = descripcion.split("(?<=\\G.{60})"); // Dividir en líneas de 40 caracteres
+
+            // Imprimir cada línea de la descripción
+            for (String linea : lineas) {
+                System.out.println(linea);
+            }
             System.out.println("¿Cuantos comprará? Ingrese la cantidad");
             cantidad = union.nextInt();
             union.nextLine();
             carrito[opcion - 1] += cantidad;
             subtotal_extra[opcion - 1] = carrito[opcion - 1] * precioGalletas[opcion - 1];
             System.out.println("Ud ha pedido " + carrito[opcion - 1] + " de " + galletas[opcion - 1]);
-            System.out.println("¿Desea elegir otro producto?  1 SI/ 2 NO / 3 Menu Principal");
+            System.out.println("¿Desea elegir otro producto?  1 SI / 2 NO / 3 Menu Principal");
             opcion = union.nextInt();
             union.nextLine();
             if (opcion == 1) {
@@ -356,29 +443,43 @@ public class compras_union {
             } else if (opcion == 3) {
                 this.fpregunta();
             } else {
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
+                this.fgalletas();
             }
         } else {
-            System.out.println("Opcion no válida");
-            this.fpanes();
+            System.out.println("Opción no válida");
+            this.fgalletas();
         }
     }
     public void fsnack() {
         System.out.println("------ SNACK------------");
         System.out.println("Seleccione panes a comprar");
+        // Imprimir encabezado de la tabla
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.println("=".repeat(60)); // Línea divisoria
+        // Imprimir las filas de la tabla
         for (int i = 0; i < snack.length; i++) {
-            System.out.println("Opcion " + (i + 1) + " : " + snack[i]);
+            System.out.printf("%-10s %-40s %-10s\n", "Opción " + (i + 1), snack[i], "S/. " + precioSnack[i]);
         }
         opcion = union.nextInt();
         union.nextLine();
         if (opcion > 0 && opcion <= snack.length) {
+            System.out.println("Usted va caomprar"+""+snack[opcion - 1]+"su precio es "+"S/."+precioSnack[opcion - 1]);
+            System.out.println("-------------------------DESCRIPCION------------------------");
+            String descripcion = descricionSnack[opcion - 1];
+            String[] lineas = descripcion.split("(?<=\\G.{60})"); // Dividir en líneas de 40 caracteres
+
+            // Imprimir cada línea de la descripción
+            for (String linea : lineas) {
+                System.out.println(linea);
+            }
             System.out.println("¿Cuantos comprará? Ingrese la cantidad");
             cantidad = union.nextInt();
             union.nextLine();
             carrito[opcion - 1] += cantidad;
             subtotal_extra[opcion - 1] = carrito[opcion - 1] * precioSnack[opcion - 1];
             System.out.println("Ud ha pedido " + carrito[opcion - 1] + " de " + snack[opcion - 1]);
-            System.out.println("¿Desea elegir otro producto?  1 SI/ 2 NO / 3 Menu Principal");
+            System.out.println("¿Desea elegir otro producto?  1 SI / 2 NO / 3 Menu Principal");
             opcion = union.nextInt();
             union.nextLine();
             if (opcion == 1) {
@@ -388,29 +489,43 @@ public class compras_union {
             } else if (opcion == 3) {
                 this.fpregunta();
             } else {
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
+                this.fsnack();
             }
         } else {
-            System.out.println("Opcion no válida");
-            this.fpanes();
+            System.out.println("Opción no válida");
+            this.fsnack();
         }
     }
     public void funtables() {
         System.out.println("------ UNTABLES------------");
         System.out.println("Seleccione panes a comprar");
+        // Imprimir encabezado de la tabla
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.println("=".repeat(60)); // Línea divisoria
+        // Imprimir las filas de la tabla
         for (int i = 0; i < untables.length; i++) {
-            System.out.println("Opcion " + (i + 1) + " : " + untables[i]);
+            System.out.printf("%-10s %-40s %-10s\n", "Opción " + (i + 1), untables[i], "S/. " + precioUntables[i]);
         }
         opcion = union.nextInt();
         union.nextLine();
         if (opcion > 0 && opcion <= untables.length) {
+            System.out.println("Usted va caomprar"+""+untables[opcion - 1]+"su precio es "+"S/."+precioUntables[opcion - 1]);
+            System.out.println("-------------------------DESCRIPCION------------------------");
+            String descripcion = descricionUntables[opcion - 1];
+            String[] lineas = descripcion.split("(?<=\\G.{60})"); // Dividir en líneas de 40 caracteres
+
+            // Imprimir cada línea de la descripción
+            for (String linea : lineas) {
+                System.out.println(linea);
+            }
             System.out.println("¿Cuantos comprará? Ingrese la cantidad");
             cantidad = union.nextInt();
             union.nextLine();
             carrito[opcion - 1] += cantidad;
             subtotal_extra[opcion - 1] = carrito[opcion - 1] * precioUntables[opcion - 1];
             System.out.println("Ud ha pedido " + carrito[opcion - 1] + " de " + untables[opcion - 1]);
-            System.out.println("¿Desea elegir otro producto?  1 SI/ 2 NO / 3 Menu Principal");
+            System.out.println("¿Desea elegir otro producto?  1 SI / 2 NO / 3 Menu Principal");
             opcion = union.nextInt();
             union.nextLine();
             if (opcion == 1) {
@@ -420,29 +535,43 @@ public class compras_union {
             } else if (opcion == 3) {
                 this.fpregunta();
             } else {
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
+                this.funtables();
             }
         } else {
-            System.out.println("Opcion no válida");
-            this.fpanes();
+            System.out.println("Opción no válida");
+            this.funtables();
         }
     }
     public void fpanetones() {
         System.out.println("------ PANETONES------------");
         System.out.println("Seleccione panes a comprar");
+        // Imprimir encabezado de la tabla
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.println("=".repeat(60)); // Línea divisoria
+        // Imprimir las filas de la tabla
         for (int i = 0; i < panetones.length; i++) {
-            System.out.println("Opcion " + (i + 1) + " : " + panetones[i]);
+            System.out.printf("%-10s %-40s %-10s\n", "Opción " + (i + 1), panetones[i], "S/. " + precioPanetones[i]);
         }
         opcion = union.nextInt();
         union.nextLine();
         if (opcion > 0 && opcion <= panetones.length) {
+            System.out.println("Usted va caomprar"+""+panetones[opcion - 1]+"su precio es "+"S/."+precioPanetones[opcion - 1]);
+            System.out.println("-------------------------DESCRIPCION------------------------");
+            String descripcion = descricionPanetones[opcion - 1];
+            String[] lineas = descripcion.split("(?<=\\G.{60})"); // Dividir en líneas de 40 caracteres
+
+            // Imprimir cada línea de la descripción
+            for (String linea : lineas) {
+                System.out.println(linea);
+            }
             System.out.println("¿Cuantos comprará? Ingrese la cantidad");
             cantidad = union.nextInt();
             union.nextLine();
             carrito[opcion - 1] += cantidad;
             subtotal_extra[opcion - 1] = carrito[opcion - 1] * precioPanetones[opcion - 1];
             System.out.println("Ud ha pedido " + carrito[opcion - 1] + " de " + panetones[opcion - 1]);
-            System.out.println("¿Desea elegir otro producto?  1 SI/ 2 NO / 3 Menu Principal");
+            System.out.println("¿Desea elegir otro producto?  1 SI / 2 NO / 3 Menu Principal");
             opcion = union.nextInt();
             union.nextLine();
             if (opcion == 1) {
@@ -452,14 +581,14 @@ public class compras_union {
             } else if (opcion == 3) {
                 this.fpregunta();
             } else {
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
+                this.fpanetones();
             }
         } else {
-            System.out.println("Opcion no válida");
-            this.fpanes();
+            System.out.println("Opción no válida");
+            this.fpanetones();
         }
     }
-
     public void puntosdeventa() {
         Scanner direc = new Scanner(System.in);
         System.out.println("PUNTOS DE VENTA");
