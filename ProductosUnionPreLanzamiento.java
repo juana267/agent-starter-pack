@@ -46,15 +46,6 @@ public class compras_union {
     int[] carritod = new int[productosdel.length];
 
     private double total = 0,subtotal=0, precio,precio1,total1=0;
-    private static String correo;
-    private static String dni;
-    private static String contraseña;
-    private String correoComp;
-    private String contraseñaComp;
-    private static String nombre;
-    private String nombreconvertido;
-    private static String apellido;
-    private String apellidoconvertido;
     private static String opcion_de_pago;
     private static String opcionU;
     private static String codigoU;
@@ -68,57 +59,65 @@ public class compras_union {
     float totalPagado;
     int[] carrito = new int[productos.length];
     String respuesta;
+    private static String nombre, apellido, dni, nombreconvertido, apellidoconvertido;
+    private char[] correo, contraseña;
+    private String correoComp, contraseñaComp;
+
     public String fdatos() {
         Scanner datos = new Scanner(System.in);
-        String  codigoU, opcion, opcionconvertido;
+        String codigoU, opcion, opcionconvertido;
+
         System.out.println("¿Usted es estudiante de la UPeU?");
         System.out.println("SI/NO");
-        opcion=datos.nextLine();
-        opcionconvertido=opcion.toUpperCase();
-        switch (opcionconvertido){
+        opcion = datos.nextLine();
+        opcionconvertido = opcion.toUpperCase();
+
+        switch (opcionconvertido) {
             case "SI":
                 System.out.println("Ingrese sus nombres: ");
-                nombre=datos.nextLine();
-                nombreconvertido=nombre.toUpperCase();
+                nombre = datos.nextLine();
+                nombreconvertido = nombre.toUpperCase();
                 System.out.println("Ingrese sus apellidos: ");
-                apellido=datos.nextLine();
-                apellidoconvertido=apellido.toUpperCase();
+                apellido = datos.nextLine();
+                apellidoconvertido = apellido.toUpperCase();
                 do {
                     System.out.print("Introduce tu numero de DNI (8 dígitos): ");
                     dni = datos.nextLine();
                 } while (dni.length() != 8);
                 System.out.println("Ingrese su correo: ");
-                correo=datos.nextLine();
+                correo = datos.nextLine().toCharArray();
                 System.out.println("Ingrese su contraseña: ");
-                contraseña=datos.nextLine();
-                System.out.println("Ingrese su codigo univercitario univercitario: ");
-                codigoU=datos.nextLine();
+                contraseña = datos.nextLine().toCharArray();
+                System.out.println("Ingrese su codigo univercitario: ");
+                codigoU = datos.nextLine();
                 break;
             case "NO":
                 System.out.println("Ingrese sus nombres: ");
-                nombre=datos.nextLine();
-                nombreconvertido=nombre.toUpperCase();
+                nombre = datos.nextLine();
+                nombreconvertido = nombre.toUpperCase();
                 System.out.println("Ingrese sus apellidos: ");
-                apellido=datos.nextLine();
-                apellidoconvertido=apellido.toUpperCase();
+                apellido = datos.nextLine();
+                apellidoconvertido = apellido.toUpperCase();
                 do {
                     System.out.print("Introduce tu numero de DNI (8 dígitos): ");
                     dni = datos.nextLine();
                 } while (dni.length() != 8);
                 System.out.println("Ingrese su correo: ");
-                correo=datos.nextLine();
+                correo = datos.nextLine().toCharArray();
                 System.out.println("Ingrese su contraseña: ");
-                contraseña=datos.nextLine();
+                contraseña = datos.nextLine().toCharArray();
                 break;
         }
+
         System.out.println("INICIE SESION EN PRODUCTOS UNION");
         System.out.println("INGRESE SU CORREO");
-        correoComp=datos.nextLine();
-        System.out.println("INGRESE SU COTRASEÑA");
-        contraseñaComp=datos.nextLine();
-        if(correoComp.equals(correo)&&contraseñaComp.equals(contraseña)){
+        correoComp = datos.nextLine();
+        System.out.println("INGRESE SU CONTRASEÑA");
+        contraseñaComp = datos.nextLine();
+
+        if (correoComp.equals(String.valueOf(correo)) && contraseñaComp.equals(String.valueOf(contraseña))) {
             System.out.println("BIENVENIDO A PRODUCTOS UNION");
-            System.out.println("Sr(a): "+nombreconvertido+" "+apellidoconvertido);
+            System.out.println("Sr(a): " + nombreconvertido + " " + apellidoconvertido);
             this.fpregunta();
         }
         return null;
