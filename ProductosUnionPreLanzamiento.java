@@ -770,13 +770,13 @@ public class compras_union {
         System.out.println(" ----------------------------AQUI LOS PUEDES COMPRAR:--------------------------------");
         this.fproductos();
     }
-    private String fTipoDePago() { //MIJAEL
+   private String fTipoDePago() { //MIJAEL
         double total = Arrays.stream(subtotal_extra).sum();
         System.out.println("El total a pagar es: " + total);
         System.out.println("Vaya a caja a pagar");
         System.out.println("ingrese el tipo de pago?");
-        System.out.println("* TARJETA ");
-        System.out.println("* EFECTIVO");
+        System.out.println("TARJETA ");
+        System.out.println("EFECTIVO");
         String opcion_de_pago = union.nextLine().toUpperCase();
         switch (opcion_de_pago) {
             case "TARJETA":
