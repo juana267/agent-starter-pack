@@ -246,7 +246,7 @@ public class compras_union {
         System.out.println("------ BOLLERIA------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Bolleria", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < bolleria.length; i++) {
@@ -292,7 +292,7 @@ public class compras_union {
         System.out.println("------ CEREALES------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Cereales", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < cereales.length; i++) {
@@ -338,7 +338,7 @@ public class compras_union {
         System.out.println("------ BEBIDAS------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Bebidas", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < bebidas.length; i++) {
@@ -384,7 +384,7 @@ public class compras_union {
         System.out.println("------ GALLETAS------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Galletas", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < galletas.length; i++) {
@@ -430,7 +430,7 @@ public class compras_union {
         System.out.println("------ SNACK------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Snack", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < snack.length; i++) {
@@ -476,7 +476,7 @@ public class compras_union {
         System.out.println("------ UNTABLES------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Untables", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < untables.length; i++) {
@@ -522,7 +522,7 @@ public class compras_union {
         System.out.println("------ PANETONES------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Panetones", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < panetones.length; i++) {
@@ -770,7 +770,7 @@ public class compras_union {
         System.out.println(" ----------------------------AQUI LOS PUEDES COMPRAR:--------------------------------");
         this.fproductos();
     }
-   private String fTipoDePago() { //MIJAEL
+    private String fTipoDePago() { //MIJAEL
         double total = Arrays.stream(subtotal_extra).sum();
         System.out.println("El total a pagar es: " + total);
         System.out.println("Vaya a caja a pagar");
@@ -841,22 +841,11 @@ public class compras_union {
         }
         return  null;
     }
+
     public void función_de_impresion_de_cobro(){
         Scanner union_m= new Scanner(System.in);
         LocalDate fechaActual = LocalDate.now();
         LocalTime horaActual = LocalTime.now();
-
-        double[] cantidades_productos1 = new double[10];
-        double[] precios_productos2 = new double[10];
-        String[][][] productos_pro = new String[10][2][1];
-
-        // Inicializar datos de ejemplo
-        for (int i = 0; i < 10; i++) {
-            productos_pro[i][0][0] = "Producto " + (i + 1); // Nombre del producto
-            productos_pro[i][1][0] = "Descripción " + (i + 1); // Descripción del producto
-            precios_productos2[i] = (i + 1) * 10.0; // Precio del producto
-        }
-
         double op_gratuitas=0.00;
         double op_exoneradas=0.00;
         double op_gravadas=totalPagado ;
@@ -868,7 +857,6 @@ public class compras_union {
         double importe_Total = sub_total + igv + icbper;
         double detraccion = 0.00;
         double importe_Neto = importe_Total-detraccion;
-
         do {
             System.out.println("\u001B[31m|-----------CUENTA DEL CAJERO-------------|");
             System.out.println("|Ingrese nombre del vendedor:_____________|");
@@ -914,9 +902,7 @@ public class compras_union {
                         System.out.println("|=-- Dirección: --------------------------------- Juliaca- Perú|");
                         System.out.println("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
                         System.out.println("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
-                        for (int i = 0; i < 10; i++) {
-                            System.out.println((i + 1) + ". " + productos_pro[i][0][0] + " - $" + precios_productos2[i]);
-                        }
+                        contenido();
                         System.out.println("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |");
                         System.out.println("|=== Op. Exoneradas: ============================= S/  " + op_exoneradas + "        |");
                         System.out.println("|=== Op. Gravadas: =============================== S/. " + op_gravadas + "        |");
@@ -960,9 +946,7 @@ public class compras_union {
                         System.out.println("|=-- codigo universitario: " + codigoU + "------------------------------------|");
                         System.out.println("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
                         System.out.println("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
-                        for (int i = 0; i < 10; i++) {
-                            System.out.println((i + 1) + ". " + productos_pro[i][0][0] + " - $" + precios_productos2[i]);
-                        }
+                        contenido();
                         System.out.println("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |");
                         System.out.println("|=== Op. Exoneradas: ============================= S/  " + op_exoneradas + "        |");
                         System.out.println("|=== Op. Gravadas: =============================== S/. " + op_gravadas + "        |");
@@ -986,12 +970,12 @@ public class compras_union {
                         break;
                     case 3:
                         EXPO_BOLETA(fechaActual, horaActual, op_gratuitas, op_exoneradas, op_gravadas,
-                                descuento_total, sub_total, igv, icbper, importe_Total, detraccion,importe_Neto, productos_pro, precios_productos2);
+                                descuento_total, sub_total, igv, icbper, importe_Total, detraccion,importe_Neto);
                         System.out.println("✨🌟Felicidades exportación de la boleta se realizo exitozamente🌟✨");
                         union_m.nextLine();
                         break;
                     case 4:
-                        EXPO_FACTURA(fechaActual, horaActual, productos_pro, precios_productos2, op_gratuitas,
+                        EXPO_FACTURA(fechaActual, horaActual, op_gratuitas,
                                 op_exoneradas, op_gravadas, descuento_total, sub_total, importe_Neto, importe_Total, icbper, igv, detraccion);
                         System.out.println("✨🌟Felicidades exportación de la factura se realizo exitozamente🌟✨");
                         union_m.nextLine();
@@ -1008,9 +992,8 @@ public class compras_union {
     }
     public void EXPO_BOLETA(LocalDate fechaActual, LocalTime horaActual, double op_gratuitas,
                             double op_exoneradas, double op_gravadas , double descuento_total, double sub_total,
-                            double igv, double icbper , double importe_Total, double detraccion, double importe_Neto,
-                            String[][][] productos_pro, double[] precios_productos2) {
-        String nombreArchivo = "D:\\Boleta.txt"; // Ruta donde se guardará el archivo de boleta
+                            double igv, double icbper , double importe_Total, double detraccion, double importe_Neto) {
+        String nombreArchivo = "D:\\Boleta.txt";
         try (FileWriter impri = new FileWriter(nombreArchivo)) {
             impri.write(" \u001B[31m");
             impri.write("|--------------------------------------------------------------|\n");
@@ -1032,9 +1015,7 @@ public class compras_union {
             impri.write("|=-- Dirección: --------------------------------- Juliaca- Perú|");
             impri.write("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
             impri.write("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
-            for (int i = 0; i < 10; i++) {
-                impri.write((i + 1) + ". " + productos_pro[i][0][0] + " - $" + precios_productos2[i]);
-            }
+            contenido();
             impri.write("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |\n");
             impri.write("|=== Op. Exoneradas: ============================= S/  " + op_exoneradas + "        |\n");
             impri.write("|=== Op. Gravadas: =============================== S/. " + op_gravadas + "        |\n");
@@ -1059,8 +1040,8 @@ public class compras_union {
             e.printStackTrace();
         }
     }
-    public void EXPO_FACTURA(LocalDate fechaActual, LocalTime horaActual, String[][][] productos_pro, double[] precios_productos2, double op_gratuitas, double op_exoneradas, double op_gravadas, double descuento_total, double sub_total, double importe_Neto, double importe_Total, double icbper, double igv, double detraccion){
-        String nombreArchivo = "D:\\Factura_impri.txt";//ruta de la factura
+    public void EXPO_FACTURA(LocalDate fechaActual, LocalTime horaActual, double op_gratuitas, double op_exoneradas, double op_gravadas, double descuento_total, double sub_total, double importe_Neto, double importe_Total, double icbper, double igv, double detraccion){
+        String nombreArchivo = "D:\\Boleta.txt";
         try (FileWriter impri = new FileWriter(nombreArchivo)) {
             impri.write("\u001B[34m");
             impri.write("|--------------------------------------------------------------|\n");
@@ -1083,9 +1064,7 @@ public class compras_union {
             impri.write("|=-- codigo universitario: " + codigoU + "------------------------------------|");
             impri.write("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
             impri.write("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
-            for (int i = 0; i < 10; i++) {
-                impri.write((i + 1) + ". " + productos_pro[i][0][0] + " - $" + precios_productos2[i]);
-            }
+            contenido();
             impri.write("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |\n");
             impri.write("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |\n");
             impri.write("|=== Op. Exoneradas: ============================= S/  " + op_exoneradas + "        |\n");
@@ -1111,6 +1090,68 @@ public class compras_union {
             e.printStackTrace();
         }
     }
+    public void contenido () {
+        String contenido = """
+                ==================================================
+                %s
+                ==================================================
+                """.formatted(generarDetalleCompra(), total, totalPagado);
+        System.out.println(contenido);
+    }
+
+    private String generarDetalleCompra() {
+        StringBuilder detalleCompra = new StringBuilder();
+        for (int i = 0; i < productos.length; i++) {
+            switch (opcion) {
+                case 1:
+                    if (carrito[i] > 0) {
+                        detalleCompra.append("%s - %d unidades - S/. %.2f\n".formatted(panes[i], carrito[i], subtotal_extra[i]));
+                    }
+                    break;
+                case 2:
+                    if (carrito[i] > 0) {
+                        detalleCompra.append("%s - %d unidades - S/. %.2f\n".formatted(bolleria[i], carrito[i], subtotal_extra[i]));
+                    }
+                    break;
+                case 3:
+                    if (carrito[i] > 0) {
+                        detalleCompra.append("%s - %d unidades - S/. %.2f\n".formatted(cereales[i], carrito[i], subtotal_extra[i]));
+                    }
+                    break;
+                case 4:
+                    if (carrito[i] > 0) {
+                        detalleCompra.append("%s - %d unidades - S/. %.2f\n".formatted(bebidas[i], carrito[i], subtotal_extra[i]));
+                    }
+                    break;
+                case 5:
+                    if (carrito[i] > 0) {
+                        detalleCompra.append("%s - %d unidades - S/. %.2f\n".formatted(galletas[i], carrito[i], subtotal_extra[i]));
+                    }
+                    break;
+                case 6:
+                    if (carrito[i] > 0) {
+                        detalleCompra.append("%s - %d unidades - S/. %.2f\n".formatted(snack[i], carrito[i], subtotal_extra[i]));
+                    }
+                    break;
+                case 7:
+                    if (carrito[i] > 0) {
+                        detalleCompra.append("%s - %d unidades - S/. %.2f\n".formatted(untables[i], carrito[i], subtotal_extra[i]));
+                    }
+                    break;
+                case 8:
+                    if (carrito[i] > 0) {
+                        detalleCompra.append("%s - %d unidades - S/. %.2f\n".formatted(panetones[i], carrito[i], subtotal_extra[i]));
+                    }
+                    break;
+                default:
+                    System.out.println("Opcion no válida");
+                    this.fpregunta();
+                    break;
+            }
+        }
+        return detalleCompra.toString();
+    }
+
     public static void main(String[]args){
         compras_union todo= new compras_union();
         todo.fdatos();
