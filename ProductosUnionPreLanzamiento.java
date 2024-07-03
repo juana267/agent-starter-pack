@@ -246,7 +246,7 @@ public class compras_union {
         System.out.println("------ BOLLERIA------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Bolleria", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < bolleria.length; i++) {
@@ -292,7 +292,7 @@ public class compras_union {
         System.out.println("------ CEREALES------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Cereales", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < cereales.length; i++) {
@@ -338,7 +338,7 @@ public class compras_union {
         System.out.println("------ BEBIDAS------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Bebidas", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < bebidas.length; i++) {
@@ -384,7 +384,7 @@ public class compras_union {
         System.out.println("------ GALLETAS------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Galletas", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < galletas.length; i++) {
@@ -430,7 +430,7 @@ public class compras_union {
         System.out.println("------ SNACK------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Snack", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < snack.length; i++) {
@@ -476,7 +476,7 @@ public class compras_union {
         System.out.println("------ UNTABLES------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Untables", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < untables.length; i++) {
@@ -522,7 +522,7 @@ public class compras_union {
         System.out.println("------ PANETONES------------");
         System.out.println("Seleccione panes a comprar");
         // Imprimir encabezado de la tabla
-        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Pan", "Precio");
+        System.out.printf("%-10s %-40s %-10s\n", "Opción", "Panetones", "Precio");
         System.out.println("=".repeat(60)); // Línea divisoria
         // Imprimir las filas de la tabla
         for (int i = 0; i < panetones.length; i++) {
