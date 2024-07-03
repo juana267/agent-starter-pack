@@ -760,13 +760,13 @@ public class compras_union {
     private void mostrarRecomendaciones(String categoria, String[][] recomendaciones) { //mio may
         System.out.println("Ud. cuenta con " + categoria + " con un IMC de: " + rpt_imc);
         System.out.println("Unión recomienda los siguientes productos: ");
-        System.out.println("┌─────────────────────────────────────────────────────────────────────────────────────────────────┐");
-        System.out.println("│ Producto                          │ Informe Nutricional recomendaciones nutricional             │");
-        System.out.println("├───────────────────────────────────┼─────────────────────────────────────────────────────────────┤");
+        System.out.println("┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐");
+        System.out.println("│ Producto                                         │ Informe Nutricional recomendaciones nutricional             │");
+        System.out.println("├──────────────────────────────────────────────────┼─────────────────────────────────────────────────────────────┤");
         for (String[] producto : recomendaciones) {
-            System.out.printf("│ %-40s         │ %-49s    │%n", producto[0], producto[1]);
+            System.out.printf("│ %-40s         │ %-56s    │%n", producto[0], producto[1]);
         }
-        System.out.println("└─────────────────────────────────────────────────────────────────────────────────────────────────┘");
+        System.out.println("└────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘");
         System.out.println(" ----------------------------AQUI LOS PUEDES COMPRAR:--------------------------------");
         this.fproductos();
     }
