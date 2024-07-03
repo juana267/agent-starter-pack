@@ -1,4 +1,3 @@
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.io.FileWriter;
@@ -47,6 +46,7 @@ public class compras_union {
 
     private double total = 0,subtotal=0, precio,precio1,total1=0;
     private static String opcion_de_pago;
+    String direccion;
     private static String opcionU;
     private static String codigoU;
     private int cantidad,cantidad1,opcion;
@@ -613,6 +613,7 @@ public class compras_union {
             case 12:
                 System.out.println("su ubicacion es:" + ubicacion[11]);
                 break;
+            default:
         }
     }
     public void delivery() {
@@ -681,13 +682,20 @@ public class compras_union {
                     this.delivery();
                 }
                 else if (opcion==2){
+                    for (int i=0; i<lugar.length;i++){
+                        System.out.println("Opcion "+(i+1)+ " : " +lugar[i]);
+                    }
+                    System.out.println("¿de que ciudad es?");
+                    int opcionci=union.nextInt();
+                    System.out.println(lugar[opcionci - 1]);
+                    System.out.println("¿Cual es su direccion?");
+                    direccion=union.next();
                     this.fTipoDePago();
                 }
                 else if (opcion==3){
                     this.fpregunta();
                 }
-                else
-                {
+                else {
                     System.out.println("Opcion no válida");
                 }
 
@@ -703,7 +711,6 @@ public class compras_union {
                 System.out.println("opcion no valida");
         }
     }
-
     public void IMC(){ //mio may
         Scanner imc = new Scanner(System.in);
         System.out.println("\033[38;5;226m----------BIENVENIDO ESTAS SON LAS RECOMENDACIONES DE UNIÓN----------");
@@ -904,7 +911,7 @@ public class compras_union {
                         System.out.println("|=-- Cliente: --------------------------  " + nombre + " " + apellido + " |");
                         System.out.println("|=-- Doc. ident: -----------------------------------  " + dni + "|");
                         System.out.println("|=-- Fecha: ------------------  " + fechaActual + "   " + horaActual + "|");
-                        System.out.println("|=-- Dirección: ---------------------------" + opcionU + " - Perú|");
+                        System.out.println("|=-- Dirección: ---------------------------" + direccion + " - Perú|");
                         System.out.println("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
                         for (int i = 0; i < productos.length; i++) {
                             System.out.printf("|%s|%s|%s|%s|%n", productos[i][0], productos[i][1], productos[i][2], productos[i][3]);
