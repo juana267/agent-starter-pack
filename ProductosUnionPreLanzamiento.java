@@ -47,8 +47,7 @@ public class compras_union {
     private double total = 0,subtotal=0, precio,precio1,total1=0;
     private static String opcion_de_pago;
     String direccion;
-    private static String opcionU;
-    private static String codigoU;
+    private static String opcionU,codigoU;
     private int cantidad,cantidad1,opcion;
     private float peso,talla,rpt_imc;   // este dato estoy usando
     private static String numero_factura;
@@ -63,7 +62,7 @@ public class compras_union {
     private char[] correo, contraseña;
     private String correoComp, contraseñaComp;
 
-    public String fdatos() {
+    public String fdatos() { //MIJAEL
         Scanner datos = new Scanner(System.in);
         String codigoU, opcion, opcionconvertido;
 
@@ -565,7 +564,7 @@ public class compras_union {
             this.fpanetones();
         }
     }
-    public void puntosdeventa() {
+    public void puntosdeventa() { //JULIO
         Scanner direc = new Scanner(System.in);
         System.out.println("PUNTOS DE VENTA");
         System.out.println("Conoce las ubicaciones donde puedes encontrar nuestros productos");
@@ -616,7 +615,7 @@ public class compras_union {
             default:
         }
     }
-    public void delivery() {
+    public void delivery() { //JULIO
         Scanner union = new Scanner(System.in);
         int opcion;
         System.out.println("DELIVERY");
@@ -729,28 +728,23 @@ public class compras_union {
                 {"Mega Galleta Integral de Coco", "Producto saludable contra la anemia"},
                 {"Palitos con Especias", "Producto saludable contra la anemia"},
                 {"Palitos con ajonjoli y linaza", "Producto saludable contra la anemia"},
-                {"Paneton Integral T/C 900 gr", "Producto saludable contra la anemia"}
-        };
+                {"Paneton Integral T/C 900 gr", "Producto saludable contra la anemia"}};
         String[][] recomendacionesPesoNormal = {
                 {"Palitos con Especias", "Producto veganos con ingesta de hierro y vitamina de b12"},
-                {"Palitos con ajonjoli y linaza", "Producto veganos con ingesta de hierro y vitamina de b12"}
-        };
+                {"Palitos con ajonjoli y linaza", "Producto veganos con ingesta de hierro y vitamina de b12"}};
         String[][] recomendacionesExcesoPeso = {
                 {"Palitos con Especias", "Producto que considera los antioxidantes"},
-                {"Palitos con ajonjoli y linaza", "Producto que considera los antioxidantes"}
-        };
+                {"Palitos con ajonjoli y linaza", "Producto que considera los antioxidantes"}};
         String[][] recomendacionesObeso = {
                 {"Paneton Integral T/C 900 gr", "Variedad de producto sin azucar añadida"},
-                {"Paneton Diet T/L 500 gr", "Variedad de producto sin azucar añadida"}
-        };
+                {"Paneton Diet T/L 500 gr", "Variedad de producto sin azucar añadida"}};
         String[][] recomendacionesObesoExtremo = {
                 {"Mega Galleta de Coco", "Producto sin presencia de octógonos de alerta"},
                 {"Mega Galleta de Kiwicha", "Producto sin presencia de octógonos de alerta"},
                 {"Mermelada de Uva Frasco", "Producto sin presencia de octógonos de alerta"},
                 {"Mantequilla de Mani Sachet", "Producto sin presencia de octógonos de alerta"},
                 {"Tostada Integral X 10", "Producto sin presencia de octógonos de alerta"},
-                {"Tostada Blanca X 10", "Producto sin presencia de octógonos de alerta"}
-        };
+                {"Tostada Blanca X 10", "Producto sin presencia de octógonos de alerta"}};
         if (rpt_imc < 18.5) {
             mostrarRecomendaciones("bajo peso", recomendaciones);
         } else if (rpt_imc >= 18.5 && rpt_imc <= 24.9) {
@@ -770,23 +764,23 @@ public class compras_union {
         System.out.println("│ Producto                          │ Informe Nutricional recomendaciones nutricional             │");
         System.out.println("├───────────────────────────────────┼─────────────────────────────────────────────────────────────┤");
         for (String[] producto : recomendaciones) {
-            System.out.printf("│ %-31s   │ %-49s    │%n", producto[0], producto[1]);
+            System.out.printf("│ %-40s         │ %-49s    │%n", producto[0], producto[1]);
         }
         System.out.println("└─────────────────────────────────────────────────────────────────────────────────────────────────┘");
         System.out.println(" ----------------------------AQUI LOS PUEDES COMPRAR:--------------------------------");
         this.fproductos();
     }
-    private String fTipoDePago() {
+    private String fTipoDePago() { //MIJAEL
         double total = Arrays.stream(subtotal_extra).sum();
         System.out.println("El total a pagar es: " + total);
         System.out.println("Vaya a caja a pagar");
         System.out.println("ingrese el tipo de pago?");
-        System.out.println("1. TARJETA ");
-        System.out.println("2. EFECTIVO");
-        opcion = union.nextInt();
-        union.nextLine();;
-        switch (opcion) {
-            case 1:
+        System.out.println("* TARJETA ");
+        System.out.println("* EFECTIVO");
+        String opcion_de_pago = union.nextLine().toUpperCase();
+        switch (opcion_de_pago) {
+            case "TARJETA":
+                this.opcion_de_pago = "TARJETA";
                 String tarjeta, fechacaducidad, dni, cvv;
                 System.out.println("ingrese el nombre completo del titular de la tarjeta");
                 String titulartarjeta=union.nextLine();
@@ -816,7 +810,8 @@ public class compras_union {
                 System.out.println("PRODUCTOS UNION");
                 función_de_impresion_de_cobro();
                 break;
-            case 2:
+            case "EFECTIVO":
+                this.opcion_de_pago = "EFECTIVO";
                 System.out.println("El monto a pagar es de: " + total);
                 System.out.println("Ingrese el pago de los productos:");
                 totalPagado = union.nextFloat();
@@ -844,15 +839,25 @@ public class compras_union {
                 this.fpregunta();
                 break;
         }
-
-
         return  null;
     }
     public void función_de_impresion_de_cobro(){
         Scanner union_m= new Scanner(System.in);
         LocalDate fechaActual = LocalDate.now();
         LocalTime horaActual = LocalTime.now();
-        double op_gratuitas=0.00; //Recordar dar valores pero solo si lo deseas *
+
+        double[] cantidades_productos1 = new double[10];
+        double[] precios_productos2 = new double[10];
+        String[][][] productos_pro = new String[10][2][1];
+
+        // Inicializar datos de ejemplo
+        for (int i = 0; i < 10; i++) {
+            productos_pro[i][0][0] = "Producto " + (i + 1); // Nombre del producto
+            productos_pro[i][1][0] = "Descripción " + (i + 1); // Descripción del producto
+            precios_productos2[i] = (i + 1) * 10.0; // Precio del producto
+        }
+
+        double op_gratuitas=0.00;
         double op_exoneradas=0.00;
         double op_gravadas=totalPagado ;
         double descuento_total=0.00;
@@ -863,21 +868,18 @@ public class compras_union {
         double importe_Total = sub_total + igv + icbper;
         double detraccion = 0.00;
         double importe_Neto = importe_Total-detraccion;
-        String[][] productos = {
-                {"N°", "CANTIDAD", "ARTICULO", "MONTO"},
-                {"1", String.valueOf(cantidad), "ARTICULO 1", String.valueOf(precio)},
-                {"2", String.valueOf(cantidad1), "ARTICULO 2", String.valueOf(precio1)}
-        };
+
         do {
-            System.out.println("------------------------------");
-            System.out.println("Ingrese nombre del vendedor: ");
+            System.out.println("\u001B[31m|-----------CUENTA DEL CAJERO-------------|");
+            System.out.println("|Ingrese nombre del vendedor:_____________|");
             nombre_vende = union_m.nextLine();
-            System.out.println("Ingrese nsu contraseña: ");
+            System.out.println("|Ingrese nsu contraseña:__________________|");
             contra_vende = union_m.nextLine();
-            System.out.println("--------INICIANDO SESIÓN--------");
-            System.out.println("Ingrese nuevamente su contraseña: ");
+            System.out.println("|------------INICIANDO SESIÓN-------------|");
+            System.out.println("|Ingrese nuevamente su contraseña:________|");
             String contra_vende_com = union_m.nextLine();
             if (contra_vende_com.equals(contra_vende)) {
+                System.out.println("\u001B[35m");
                 System.out.println("|-------------------------------------------------------------------------------|");
                 System.out.println("|----- BIENVENIDO(A) A PRODUCTOS UNION"+" Srta.:  "+nombre_vende+" 🌟 ----------|");
                 System.out.println("|-------------------------------------------------------------------------------|");
@@ -885,7 +887,6 @@ public class compras_union {
                 System.out.println("|2| GENERAR FACTURA               	   -----------------------------------------|");
                 System.out.println("|3| EXPORTAR BOLETA            	       -----------------------------------------|");
                 System.out.println("|4| EXPORTAR FACTURA      	       	   -----------------------------------------|");
-                System.out.println("|5| MOSTRAR CARRITO      	       	   -----------------------------------------|");
                 System.out.println("|0| SALIR                              -----------------------------------------|");
                 System.out.println("|-------------------------------------------------------------------------------|");
                 System.out.print("|INGRESAR LA OPCION DEL (1 AL 4): ");
@@ -894,7 +895,6 @@ public class compras_union {
                 switch (opcion) {
                     case 1:
                         numero_factura = "BROE - 00000" + (++contador_factura);
-                        System.out.println("\033[38;5;226m");
                         System.out.println("|--------------------------------------------------------------|");
                         System.out.println("|---------------------------- UNIÓN ---------------------------|");
                         System.out.println("|-------------------- Saludable por naturaleza ----------------|");
@@ -911,10 +911,11 @@ public class compras_union {
                         System.out.println("|=-- Cliente: --------------------------  " + nombre + " " + apellido + " |");
                         System.out.println("|=-- Doc. ident: -----------------------------------  " + dni + "|");
                         System.out.println("|=-- Fecha: ------------------  " + fechaActual + "   " + horaActual + "|");
-                        System.out.println("|=-- Dirección: ---------------------------" + direccion + " - Perú|");
+                        System.out.println("|=-- Dirección: ---------------------------" + this.direccion + " - Perú|");
                         System.out.println("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
-                        for (int i = 0; i < productos.length; i++) {
-                            System.out.printf("|%s|%s|%s|%s|%n", productos[i][0], productos[i][1], productos[i][2], productos[i][3]);
+                        System.out.println("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
+                        for (int i = 0; i < 10; i++) {
+                            System.out.println((i + 1) + ". " + productos_pro[i][0][0] + " - $" + precios_productos2[i]);
                         }
                         System.out.println("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |");
                         System.out.println("|=== Op. Exoneradas: ============================= S/  " + op_exoneradas + "        |");
@@ -928,16 +929,18 @@ public class compras_union {
                         System.out.println("|=== Importe neto: =============================== S/. " + importe_Neto + " |");
                         System.out.println("|================= GRACIAS POR SU COMPRA ======================|");
                         System.out.println("|==============================================================|");
-                        System.out.println("|=== Medio de Pago: ==============================  " + opcion_de_pago + "   |");
+                        System.out.println("|=== Medio de Pago: ==============================  " + this.opcion_de_pago+ "   |");
                         System.out.println("|=== Vendedor(a) :================================  " + nombre_vende + "     |");
                         System.out.println("|==============================================================|");
                         System.out.println("|==== Representación Impresa de documento, el cual puede ser ==|");
                         System.out.println("|==========  descargado de la pagina WWW.upeu.pe   ============|");
                         System.out.println("|==============================================================|");
                         System.out.println("|==============================================================|");
+                        union_m.nextLine();
                         break;
                     case 2:
-                        System.out.println("\u001B[36m|--------------------------------------------------------------|");
+                        System.out.println("\033[91mTexto en rojo claro\033[0m");
+                        System.out.println("|--------------------------------------------------------------|");
                         System.out.println("|---------------------------- UNIÓN ---------------------------|");
                         System.out.println("|-------------------- Saludable por naturaleza ----------------|");
                         System.out.println("|--------------------------------------------------------------|");
@@ -956,8 +959,9 @@ public class compras_union {
                         System.out.println("|=-- Contraseña: " + contraseña + "----------------------------------------------|");
                         System.out.println("|=-- codigo universitario: " + codigoU + "------------------------------------|");
                         System.out.println("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
-                        for (int i = 0; i < productos.length; i++) {
-                            System.out.printf("|%s|%s|%s|%s|%n", productos[i][0], productos[i][1], productos[i][2], productos[i][3]);
+                        System.out.println("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
+                        for (int i = 0; i < 10; i++) {
+                            System.out.println((i + 1) + ". " + productos_pro[i][0][0] + " - $" + precios_productos2[i]);
                         }
                         System.out.println("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |");
                         System.out.println("|=== Op. Exoneradas: ============================= S/  " + op_exoneradas + "        |");
@@ -971,22 +975,26 @@ public class compras_union {
                         System.out.println("|=== Importe neto: =============================== S/. " + importe_Neto + " |");
                         System.out.println("|================= GRACIAS POR SU COMPRA ======================|");
                         System.out.println("|==============================================================|");
-                        System.out.println("|=== Medio de Pago: ==============================  " + opcion_de_pago + "   |");
+                        System.out.println("|=== Medio de Pago: ==============================  " + this.opcion_de_pago+ "   |");
                         System.out.println("|=== Vendedor(a) :================================  " + nombre_vende + "     |");
                         System.out.println("|==============================================================|");
                         System.out.println("|==== Representación Impresa de documento, el cual puede ser ==|");
                         System.out.println("|==========  descargado de la pagina WWW.upeu.pe   ============|");
                         System.out.println("|==============================================================|");
                         System.out.println("|==============================================================|");
+                        union_m.nextLine();
                         break;
                     case 3:
-                        EXPO_BOLETA(productos, fechaActual, horaActual);
+                        EXPO_BOLETA(fechaActual, horaActual, op_gratuitas, op_exoneradas, op_gravadas,
+                                descuento_total, sub_total, igv, icbper, importe_Total, detraccion,importe_Neto, productos_pro, precios_productos2);
+                        System.out.println("✨🌟Felicidades exportación de la boleta se realizo exitozamente🌟✨");
+                        union_m.nextLine();
                         break;
                     case 4:
-                        EXPO_FACTURA(productos, fechaActual, horaActual);
-                        break;
-                    case 5:
-                        //CARRITO();
+                        EXPO_FACTURA(fechaActual, horaActual, productos_pro, precios_productos2, op_gratuitas,
+                                op_exoneradas, op_gravadas, descuento_total, sub_total, importe_Neto, importe_Total, icbper, igv, detraccion);
+                        System.out.println("✨🌟Felicidades exportación de la factura se realizo exitozamente🌟✨");
+                        union_m.nextLine();
                         break;
                     case 0:
                         System.out.println("\u001B[31m🌟✨ Gracias por usar nuestro servicio. ✨🌟");
@@ -998,59 +1006,110 @@ public class compras_union {
             }
         } while (opcion != 0);
     }
-    public static void EXPO_BOLETA(String[][] productos, LocalDate fechaActual, LocalTime horaActual){
-        String nombreArchivo = "D:\\Factura.txt";
-        try (FileWriter writer = new FileWriter(nombreArchivo)){
-            writer.write("\033[38;5;226m|--------------------------------------------------------------|\n");
-            writer.write("|---------------------------- UNIÓN ---------------------------|\n");
-            writer.write("|-------------------- Saludable por naturaleza ----------------|\n");
-            writer.write("|--------------------------------------------------------------|\n");
-            writer.write("|------------------- UNIVERSIDAD PERUANA UNIÓN ----------------|\n");
-            writer.write("|--------- Centro de prod. de Bienes  Productos union ---------|\n");
-            writer.write("|---------------- C. central Km. 19 Villa union ---------------|\n");
-            writer.write("|-------------- Lurigancho - Chosica Fax : 6186300 ------------|\n");
-            writer.write("|------------------ Telef. 618-6309 - 618-6310 ----------------|\n");
-            writer.write("|------------------------ RUC 20138122256 ---------------------|\n");
-            writer.write("|--------------------------------------------------------------|\n");
-            writer.write("|===================== BOLETA ELECTRONICA =====================|\n");
-            writer.write("|=-- Numero: -----------------------------------  " + numero_factura + "|\n");
-            writer.write("|=-- Cliente: --------------------------  " + nombre + " " + apellido + " |\n");
-            writer.write("|=-- Doc. ident: -----------------------------------  " + dni + "|\n");
-            writer.write("|=-- Fecha: ------------------  " + fechaActual + "   " + horaActual + "|\n");
-            writer.write("|=-- Dirección: ---------------------------" + opcionU + " - Perú|\n");
-            writer.write("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|\n");
-            for (int i = 0; i < productos.length; i++) {
-                writer.write(String.format("|%s|%s|%s|%s|%n", productos[i][0], productos[i][1], productos[i][2], productos[i][3]));
+    public void EXPO_BOLETA(LocalDate fechaActual, LocalTime horaActual, double op_gratuitas,
+                            double op_exoneradas, double op_gravadas , double descuento_total, double sub_total,
+                            double igv, double icbper , double importe_Total, double detraccion, double importe_Neto,
+                            String[][][] productos_pro, double[] precios_productos2) {
+        String nombreArchivo = "D:\\Boleta.txt"; // Ruta donde se guardará el archivo de boleta
+        try (FileWriter impri = new FileWriter(nombreArchivo)) {
+            impri.write(" \u001B[31m");
+            impri.write("|--------------------------------------------------------------|\n");
+            impri.write("|---------------------------- UNIÓN ---------------------------|\n");
+            impri.write("|-------------------- Saludable por naturaleza ----------------|\n");
+            impri.write("|--------------------------------------------------------------|\n");
+            impri.write("|------------------- UNIVERSIDAD PERUANA UNIÓN ----------------|\n");
+            impri.write("|--------- Centro de prod. de Bienes  Productos union ---------|\n");
+            impri.write("|---------------- C. central Km. 19 Villa union ---------------|\n");
+            impri.write("|-------------- Lurigancho - Chosica Fax : 6186300 ------------|\n");
+            impri.write("|------------------ Telef. 618-6309 - 618-6310 ----------------|\n");
+            impri.write("|------------------------ RUC 20138122256 ---------------------|\n");
+            impri.write("|--------------------------------------------------------------|\n");
+            impri.write("|===================== BOLETA ELECTRONICA =====================|\n");
+            impri.write("|=-- Numero: -----------------------------------  " + numero_factura + "|\n");
+            impri.write("|=-- Cliente: --------------------------  " + nombre + " " + apellido + " |\n");
+            impri.write("|=-- Doc. ident: -----------------------------------  " + dni + "|\n");
+            impri.write("|=-- Fecha: ------------------  " + fechaActual + "   " + horaActual + "|\n");
+            impri.write("|=-- Dirección: ---------------------------" + direccion + " - Perú|\n");
+            impri.write("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
+            impri.write("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
+            for (int i = 0; i < 10; i++) {
+                impri.write((i + 1) + ". " + productos_pro[i][0][0] + " - $" + precios_productos2[i]);
             }
-            writer.write("|=== Op. Gratuitas: ============================== S/. " +  0+ "        |\n");
-            writer.write("|=== Op. Exoneradas: ============================= S/  " + 0+ "        |\n");
-            writer.write("|=== Op. Gravadas: =============================== S/. " + 0+ "        |\n");
-            writer.write("|=== Total de descuento: ========================= S/. " + 0+ "        |\n");
-            writer.write("|=== Sub-Total: ================================== S/. " + 0+ "        |\n");
-            writer.write("|=== IGV: ======================================== S/. " + 0+ "          |\n");
-            writer.write("|=== ICBPER: ===================================== S/. " + 0+ "       |\n");
-            writer.write("|=== Importe total: ============================== S/. " + 0+ " |\n");
-            writer.write("|=== Detracción: ================================= S/. " + 0+ "|\n");
-            writer.write("|=== Importe neto: =============================== S/. " + 0+ " |\n");
-            writer.write("|================= GRACIAS POR SU COMPRA ======================|\n");
-            writer.write("|==============================================================|\n");
-            writer.write("|=== Medio de Pago: ==============================  " + opcion_de_pago + "   |\n");
-            writer.write("|=== Vendedor(a) :================================  " + nombre_vende + "     |\n");
-            writer.write("|==============================================================|\n");
-            writer.write("|==== Representación Impresa de documento, el cual puede ser ==|\n");
-            writer.write("|==========  descargado de la pagina WWW.upeu.pe   ============|\n");
-            writer.write("|==============================================================|\n");
-            writer.write("|==============================================================|\n");
-        } catch (IOException e) {
+            impri.write("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |\n");
+            impri.write("|=== Op. Exoneradas: ============================= S/  " + op_exoneradas + "        |\n");
+            impri.write("|=== Op. Gravadas: =============================== S/. " + op_gravadas + "        |\n");
+            impri.write("|=== Total de descuento: ========================= S/. " + descuento_total + "        |\n");
+            impri.write("|=== Sub-Total: ================================== S/. " + sub_total + "        |\n");
+            impri.write("|=== IGV: ======================================== S/. " + igv + "          |\n");
+            impri.write("|=== ICBPER: ===================================== S/. " + icbper + "       |\n");
+            impri.write("|=== Importe total: ============================== S/. " + importe_Total + " |\n");
+            impri.write("|=== Detracción: ================================= S/. " + detraccion + "|\n");
+            impri.write("|=== Importe neto: =============================== S/. " + importe_Neto + " |\n");
+            impri.write("|================= GRACIAS POR SU COMPRA ======================|\n");
+            impri.write("|==============================================================|");
+            impri.write("|=== Medio de Pago: ==============================  " + this.opcion_de_pago+ "   |");
+            impri.write("|=== Vendedor(a) :================================  " + nombre_vende + "     |");
+            impri.write("|==============================================================|");
+            impri.write("|==== Representación Impresa de documento, el cual puede ser ==|\n");
+            impri.write("|==========  descargado de la pagina WWW.upeu.pe   ============|\n");
+            impri.write("|==============================================================|\n");
+            impri.write("|==============================================================|\n");
+
+        }  catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public static void EXPO_FACTURA(String[][] productos, LocalDate fechaActual, LocalTime horaActual){
-        String nombreArchivo = "D:\\Factura.txt";
-        //aqui repetimos otra vez
-    }
-    public static void CARRITO(String[][] productos, LocalDate fechaActual, LocalTime horaActual){
+    public void EXPO_FACTURA(LocalDate fechaActual, LocalTime horaActual, String[][][] productos_pro, double[] precios_productos2, double op_gratuitas, double op_exoneradas, double op_gravadas, double descuento_total, double sub_total, double importe_Neto, double importe_Total, double icbper, double igv, double detraccion){
+        String nombreArchivo = "D:\\Factura_impri.txt";//ruta de la factura
+        try (FileWriter impri = new FileWriter(nombreArchivo)) {
+            impri.write("\u001B[34m");
+            impri.write("|--------------------------------------------------------------|\n");
+            impri.write("|---------------------------- UNIÓN ---------------------------|\n");
+            impri.write("|-------------------- Saludable por naturaleza ----------------|\n");
+            impri.write("|--------------------------------------------------------------|\n");
+            impri.write("|------------------- UNIVERSIDAD PERUANA UNIÓN ----------------|\n");
+            impri.write("|--------- Centro de prod. de Bienes  Productos union ---------|\n");
+            impri.write("|---------------- C. central Km. 19 Villa union ---------------|\n");
+            impri.write("|-------------- Lurigancho - Chosica Fax : 6186300 ------------|\n");
+            impri.write("|------------------ Telef. 618-6309 - 618-6310 ----------------|\n");
+            impri.write("|------------------------ RUC 20138122256 ---------------------|\n");
+            impri.write("|--------------------------------------------------------------|\n");
+            impri.write("|======================= FACTURA DE UNIÓN =====================|");
+            impri.write("|=-- Fecha: ------------------  " + fechaActual + "   " + horaActual + "|");
+            impri.write("|=-- Facturado a Cliente: " + nombre + " " + apellido + "-----------|");
+            impri.write("|=-- DNI: " + dni + "-------------------------------------------|");
+            impri.write("|=-- Correo: " + correo + "--------------------------------------------------|");
+            impri.write("|=-- Contraseña: " + contraseña + "----------------------------------------------|");
+            impri.write("|=-- codigo universitario: " + codigoU + "------------------------------------|");
+            impri.write("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
+            impri.write("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
+            for (int i = 0; i < 10; i++) {
+                impri.write((i + 1) + ". " + productos_pro[i][0][0] + " - $" + precios_productos2[i]);
+            }
+            impri.write("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |\n");
+            impri.write("|=== Op. Gratuitas: ============================== S/. " + op_gratuitas + "        |\n");
+            impri.write("|=== Op. Exoneradas: ============================= S/  " + op_exoneradas + "        |\n");
+            impri.write("|=== Op. Gravadas: =============================== S/. " + op_gravadas + "        |\n");
+            impri.write("|=== Total de descuento: ========================= S/. " + descuento_total + "        |\n");
+            impri.write("|=== Sub-Total: ================================== S/. " + sub_total + "        |\n");
+            impri.write("|=== IGV: ======================================== S/. " + igv + "          |\n");
+            impri.write("|=== ICBPER: ===================================== S/. " + icbper + "       |\n");
+            impri.write("|=== Importe total: ============================== S/. " + importe_Total + " |\n");
+            impri.write("|=== Detracción: ================================= S/. " + detraccion + "|\n");
+            impri.write("|=== Importe neto: =============================== S/. " + importe_Neto + " |\n");
+            impri.write("|================= GRACIAS POR SU COMPRA ======================|\n");
+            impri.write("|==============================================================|");
+            impri.write("|=== Medio de Pago: ==============================  " + this.opcion_de_pago+ "   |");
+            impri.write("|=== Vendedor(a) :================================  " + nombre_vende + "     |");
+            impri.write("|==============================================================|");
+            impri.write("|==== Representación Impresa de documento, el cual puede ser ==|\n");
+            impri.write("|==========  descargado de la pagina WWW.upeu.pe   ============|\n");
+            impri.write("|==============================================================|\n");
+            impri.write("|==============================================================|\n");
 
+        }  catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public static void main(String[]args){
         compras_union todo= new compras_union();
