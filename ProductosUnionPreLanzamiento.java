@@ -911,7 +911,7 @@ public class compras_union {
                         System.out.println("|=-- Cliente: --------------------------  " + nombre + " " + apellido + " |");
                         System.out.println("|=-- Doc. ident: -----------------------------------  " + dni + "|");
                         System.out.println("|=-- Fecha: ------------------  " + fechaActual + "   " + horaActual + "|");
-                        System.out.println("|=-- Dirección: ---------------------------" + this.direccion + " - Perú|");
+                        System.out.println("|=-- Dirección: --------------------------------- Juliaca- Perú|");
                         System.out.println("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
                         System.out.println("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
                         for (int i = 0; i < 10; i++) {
@@ -1029,7 +1029,7 @@ public class compras_union {
             impri.write("|=-- Cliente: --------------------------  " + nombre + " " + apellido + " |\n");
             impri.write("|=-- Doc. ident: -----------------------------------  " + dni + "|\n");
             impri.write("|=-- Fecha: ------------------  " + fechaActual + "   " + horaActual + "|\n");
-            impri.write("|=-- Dirección: ---------------------------" + direccion + " - Perú|\n");
+            impri.write("|=-- Dirección: --------------------------------- Juliaca- Perú|");
             impri.write("|================ BOLSA DE PRODUCTOS COMPRADOS: ===============|");
             impri.write("| N° | PRODUCTOS           | PRECIOS  | CANTIDAD |");
             for (int i = 0; i < 10; i++) {
