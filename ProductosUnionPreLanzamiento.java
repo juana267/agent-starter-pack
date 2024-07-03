@@ -660,7 +660,7 @@ public class compras_union {
                 opcion=union.nextInt();
                 System.out.println("¿Cuantos comprará? Ingrese la cantidad");
                 cantidad1=union.nextInt();
-                carritod[0]+=cantidad1;
+                carrito[0]+=cantidad1;
                 System.out.println("Ud ha pedido "+carritod[0]+ " productos de "+productosdel[opcion - 1]);
                 subtotal = preciodel[opcion - 1] * cantidad1;
                 if (subtotal>= 58.00) {
@@ -841,7 +841,6 @@ public class compras_union {
         }
         return  null;
     }
-
     public void función_de_impresion_de_cobro(){
         Scanner union_m= new Scanner(System.in);
         LocalDate fechaActual = LocalDate.now();
@@ -922,7 +921,7 @@ public class compras_union {
                         System.out.println("|==========  descargado de la pagina WWW.upeu.pe   ============|");
                         System.out.println("|==============================================================|");
                         System.out.println("|==============================================================|");
-                        union_m.nextLine();
+
                         break;
                     case 2:
                         System.out.println("\033[91mTexto en rojo claro\033[0m");
@@ -1040,7 +1039,9 @@ public class compras_union {
             e.printStackTrace();
         }
     }
-    public void EXPO_FACTURA(LocalDate fechaActual, LocalTime horaActual, double op_gratuitas, double op_exoneradas, double op_gravadas, double descuento_total, double sub_total, double importe_Neto, double importe_Total, double icbper, double igv, double detraccion){
+    public void EXPO_FACTURA(LocalDate fechaActual, LocalTime horaActual, double op_gratuitas, 
+                             double op_exoneradas, double op_gravadas, double descuento_total, double sub_total, double 
+                                     importe_Neto, double importe_Total, double icbper, double igv, double detraccion){
         String nombreArchivo = "D:\\Boleta.txt";
         try (FileWriter impri = new FileWriter(nombreArchivo)) {
             impri.write("\u001B[34m");
@@ -1151,7 +1152,6 @@ public class compras_union {
         }
         return detalleCompra.toString();
     }
-
     public static void main(String[]args){
         compras_union todo= new compras_union();
         todo.fdatos();
