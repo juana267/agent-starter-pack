@@ -617,7 +617,6 @@ public class compras_union {
     }
     public void delivery() { //JULIO
         Scanner union = new Scanner(System.in);
-        int opcion;
         System.out.println("DELIVERY");
         System.out.println("Visita la tienda virtual y conoce las ofertas\n" +
                 "que tenemos para ti");
@@ -627,76 +626,7 @@ public class compras_union {
         String respuesta1=respuesta.toUpperCase();
         switch (respuesta1) {
             case "SI":
-                System.out.println("\033[38;5;203m");
-                System.out.println("Productos disponibles:");
-                System.out.println("┌──────────────────────────────────────────────────────────┐");
-                System.out.println("│ Nº │ Producto                        │ Precio │ Cantidad │");
-                System.out.println("├────┼─────────────────────────────────┼────────┼──────────┤");
-                System.out.println("│ 1  | "+productosdel [0]+"                         | "+preciodel [0]+"   | 7        │");
-                System.out.println("│ 2  | "+productosdel [1]+"                  | "+preciodel [1]+"   | 350g     │");
-                System.out.println("│ 3  | "+productosdel [2]+"      | "+preciodel [2]+"   | 200g     │");
-                System.out.println("│ 4  | "+productosdel [3]+"             | "+preciodel [3]+"   | 1000g    │");
-                System.out.println("│ 5  | "+productosdel [4]+"         | "+preciodel [4]+"    | 1        │");
-                System.out.println("│ 6  | "+productosdel [5]+"            | "+preciodel [5]+"    | 65g      │");
-                System.out.println("│ 7  | "+productosdel [6]+"   | "+preciodel [6]+"    | 65g      │");
-                System.out.println("│ 8  | "+productosdel [7]+"           | "+preciodel [7]+"    | 10       │");
-                System.out.println("│ 9  | "+productosdel [8]+"             | "+preciodel [8]+"    | 10       │    ┌──────────────────────────────────────────────────────────┐");
-                System.out.println("│ 10 | "+productosdel [9]+"         | "+preciodel [9]+"   | 500g     │    │                                                        X │ ");
-                System.out.println("│ 11 | "+productosdel [10]+"     | "+preciodel [10]+"   | 900g     │    │                           AVISO                          │");
-                System.out.println("│ 12 | "+productosdel [11]+"| "+preciodel [11]+"    | 1        │    │      Días de entrega                  Monto Mínimo       │");
-                System.out.println("│ 13 | "+productosdel [12]+" | "+preciodel [12]+"    | 1        │    │   El día de entrega es          El monto mínimo para las │");
-                System.out.println("│ 14 | "+productosdel [13]+"           | "+preciodel [13]+"    | 1        │    │          jueves                    compras es de S/. 58  │");
-                System.out.println("│ 15 | "+productosdel [14]+"      | "+preciodel [14]+"    | 1        │    │                                       incluye Delivery   │");
-                System.out.println("│ 16 | "+productosdel [15]+"    | "+preciodel [15]+"    | 1        │    │                                                          │");
-                System.out.println("│ 17 | "+productosdel [16]+"                      | "+preciodel [16]+"    | 1        │    │                           Además                         │");
-                System.out.println("│ 18 | "+productosdel [17]+"  | "+preciodel [17]+"    | 1        │    │      Recuerda usar la aplicación para encontrar muchas   │");
-                System.out.println("│ 19 | "+productosdel [18]+"| "+preciodel [18]+"    | 1        │    │      promociones y ofertas                               │");
-                System.out.println("│ 20 | "+productosdel [19]+"   | "+preciodel [19]+"    | 1        │    │                                                          │");
-                System.out.println("│ 21 | "+productosdel [20]+"         | "+preciodel [20]+"    | 1        │    │                                                          │");
-                System.out.println("│ 22 | "+productosdel [21]+"         | "+preciodel [21]+"    | 1        │    │      App: Tienda Unión                                   │");
-                System.out.println("│ 23 | "+productosdel [22]+"            | "+preciodel [22]+"    | 1        │    └──────────────────────────────────────────────────────────┘");
-                System.out.println("└──────────────────────────────────────────────────────────┘    ");
-                System.out.println("Seleccione opción:");
-                opcion=union.nextInt();
-                System.out.println("¿Cuantos comprará? Ingrese la cantidad");
-                cantidad1=union.nextInt();
-                carrito[0]+=cantidad1;
-                System.out.println("Ud ha pedido "+carritod[0]+ " productos de "+productosdel[opcion - 1]);
-                subtotal = preciodel[opcion - 1] * cantidad1;
-                if (subtotal>= 58.00) {
-                    System.out.println(" se le sumara S/. 8.00 soles por el delivery");
-                    subtotal_extra[opcion - 1] = subtotal + 8;
-                } else if (subtotal_extra[opcion - 1] < 58) {
-                    System.out.println("Todavia no supera el monto mínimo");
-                    this.delivery();
-                } else {
-                    System.out.println("opcion no valida");
-                }
-                System.out.println("¿Desea elegir otro producto más?  1 SI/ 2 NO / 3 Volver a Menú");
-                opcion=union.nextInt();
-                union.nextLine();
-                if(opcion==1)
-                {
-                    System.out.println("Volviendo a la opción de compra");
-                    this.delivery();
-                }
-                else if (opcion==2){
-                    for (int i=0; i<lugar.length;i++){
-                        System.out.println("Opcion "+(i+1)+ " : " +lugar[i]);
-                    }
-                    System.out.println("¿de que ciudad es?");
-                    int opcionci=union.nextInt();
-                    System.out.println(lugar[opcionci - 1]);
-                    System.out.println("¿Cual es su direccion?");
-                    direccion=union.next();
-                    this.fTipoDePago();
-                }
-                else if (opcion==3){
-                    this.fpregunta();
-                }
-                else {
-                    System.out.println("Opcion no válida");
-                }
+                productosdelivery();
 
             case "NO":
                 System.out.println("\033[38;5;226m");
@@ -708,6 +638,76 @@ public class compras_union {
                 break;
             default:
                 System.out.println("opcion no valida");
+        }
+    }
+    public void productosdelivery() {
+        System.out.println("\033[38;5;203m");
+        System.out.println("Productos disponibles:");
+        System.out.println("┌──────────────────────────────────────────────────────────┐");
+        System.out.println("│ Nº │ Producto                        │ Precio │ Cantidad │");
+        System.out.println("├────┼─────────────────────────────────┼────────┼──────────┤");
+        System.out.println("│ 1  | "+productosdel [0]+"                         | "+preciodel [0]+"   | 7        │");
+        System.out.println("│ 2  | "+productosdel [1]+"                  | "+preciodel [1]+"   | 350g     │");
+        System.out.println("│ 3  | "+productosdel [2]+"      | "+preciodel [2]+"   | 200g     │");
+        System.out.println("│ 4  | "+productosdel [3]+"             | "+preciodel [3]+"   | 1000g    │");
+        System.out.println("│ 5  | "+productosdel [4]+"         | "+preciodel [4]+"    | 1        │");
+        System.out.println("│ 6  | "+productosdel [5]+"            | "+preciodel [5]+"    | 65g      │");
+        System.out.println("│ 7  | "+productosdel [6]+"   | "+preciodel [6]+"    | 65g      │");
+        System.out.println("│ 8  | "+productosdel [7]+"           | "+preciodel [7]+"    | 10       │");
+        System.out.println("│ 9  | "+productosdel [8]+"             | "+preciodel [8]+"    | 10       │    ┌──────────────────────────────────────────────────────────┐");
+        System.out.println("│ 10 | "+productosdel [9]+"         | "+preciodel [9]+"   | 500g     │    │                                                        X │ ");
+        System.out.println("│ 11 | "+productosdel [10]+"     | "+preciodel [10]+"   | 900g     │    │                           AVISO                          │");
+        System.out.println("│ 12 | "+productosdel [11]+"| "+preciodel [11]+"    | 1        │    │      Días de entrega                  Monto Mínimo       │");
+        System.out.println("│ 13 | "+productosdel [12]+" | "+preciodel [12]+"    | 1        │    │   El día de entrega es          El monto mínimo para las │");
+        System.out.println("│ 14 | "+productosdel [13]+"           | "+preciodel [13]+"    | 1        │    │          jueves                    compras es de S/. 58  │");
+        System.out.println("│ 15 | "+productosdel [14]+"      | "+preciodel [14]+"    | 1        │    │                                       incluye Delivery   │");
+        System.out.println("│ 16 | "+productosdel [15]+"    | "+preciodel [15]+"    | 1        │    │                                                          │");
+        System.out.println("│ 17 | "+productosdel [16]+"                      | "+preciodel [16]+"    | 1        │    │                           Además                         │");
+        System.out.println("│ 18 | "+productosdel [17]+"  | "+preciodel [17]+"    | 1        │    │      Recuerda usar la aplicación para encontrar muchas   │");
+        System.out.println("│ 19 | "+productosdel [18]+"| "+preciodel [18]+"    | 1        │    │      promociones y ofertas                               │");
+        System.out.println("│ 20 | "+productosdel [19]+"   | "+preciodel [19]+"    | 1        │    │                                                          │");
+        System.out.println("│ 21 | "+productosdel [20]+"         | "+preciodel [20]+"    | 1        │    │                                                          │");
+        System.out.println("│ 22 | "+productosdel [21]+"         | "+preciodel [21]+"    | 1        │    │      App: Tienda Unión                                   │");
+        System.out.println("│ 23 | "+productosdel [22]+"            | "+preciodel [22]+"    | 1        │    └──────────────────────────────────────────────────────────┘");
+        System.out.println("└──────────────────────────────────────────────────────────┘    ");
+        System.out.println("Seleccione opción:");
+        opcion = union.nextInt();
+        union.nextLine();
+        if (opcion > 0 && opcion <= productosdel.length) {
+            System.out.println("Usted va caomprar"+""+productosdel[opcion - 1]+"su precio es "+"S/."+preciodel[opcion - 1]);
+            System.out.println("¿Cuantos comprará? Ingrese la cantidad");
+            cantidad = union.nextInt();
+            carrito[opcion - 1] += cantidad;
+            subtotal_extra[opcion - 1] = carrito[opcion - 1] * preciodel[opcion - 1];
+            System.out.println("Ud ha pedido " + carrito[opcion - 1] + " de " + productosdel[opcion - 1]);
+            System.out.println("¿Desea elegir otro producto?\n" +
+                    "1 SI \n" +
+                    "2 NO \n" +
+                    "3 Menu Principal");
+            opcion = union.nextInt();
+            union.nextLine();
+            if (opcion == 1) {
+                this.productosdelivery();
+            } else if (opcion == 2) {
+                if (subtotal_extra[opcion - 1] >= 58.00) {
+                    System.out.println(" se le sumara S/. 8.00 soles por el delivery");
+                    total=subtotal_extra[opcion - 1]+8;
+                } else if (subtotal_extra[opcion - 1] < 58) {
+                    System.out.println("Todavia no supera el monto mínimo");
+                    this.delivery();
+                } else {
+                    System.out.println("opcion no valida");
+                }
+                this.fTipoDePago();
+            } else if (opcion == 3) {
+                this.fpregunta();
+            } else {
+                System.out.println("Opción no válida");
+                this.fpanetones();
+            }
+        } else {
+            System.out.println("Opción no válida");
+            this.fpanetones();
         }
     }
     public void IMC(){ //mio may
